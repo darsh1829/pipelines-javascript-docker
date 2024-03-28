@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: darshpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: darshpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: darshpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: darshpipelinesjavascriptdocker 
+          image: mycontainerregistryas2.azurecr.io/darshpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
